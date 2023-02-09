@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Palindrome {
+    
+  public static void main(String[] args) {
+     Scanner input = new Scanner(System.in);
+    int number;
+    
+    System.out.print("Enter a five-digit integer: ");
+    number = input.nextInt();
+    
+    if (number >= 10000 && number <= 99999) {
+      int reverse = 0;
+      int temp = number;
+      
+      while (temp != 0) {
+        reverse = reverse * 10 + temp % 10;
+        temp /= 10;
+      }
+      
+      if (number == reverse) {
+        System.out.println(number + " is a palindrome");
+      } else {
+        System.out.println(number + " is not a palindrome");
+      }
+    } else {
+      System.out.println("Error: Not a five-digit integer. Enter a five-digit integer.");
+    }
+  }
+}
